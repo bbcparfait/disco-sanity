@@ -9,7 +9,9 @@ import { presentationTool } from 'sanity/presentation';
 
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
 import { apiVersion, dataset, projectId } from './src/sanity/env';
-import { schema } from './src/sanity/schema';
+import { schema } from '@/sanity/schema';
+
+import { locate } from '@/sanity/presentation/locate';
 
 export default defineConfig({
   basePath: '/studio',
@@ -23,6 +25,7 @@ export default defineConfig({
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({ defaultApiVersion: apiVersion }),
     presentationTool({
+      locate,
       previewUrl: {
         draftMode: {
           enable: '/api/draft',

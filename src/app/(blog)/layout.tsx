@@ -4,7 +4,7 @@ import { VisualEditing } from 'next-sanity';
 import { draftMode } from 'next/headers';
 import '@/styles/globals.css';
 
-const googleFont = M_PLUS_Rounded_1c({
+const mplusRounded1c = M_PLUS_Rounded_1c({
   weight: ['100', '400', '800'],
   style: ['normal'],
   subsets: ['latin'],
@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={googleFont.className}>
+      <body className={mplusRounded1c.className}>
         {draftMode().isEnabled && (
           <div>
             <a className='p-4 bg-blue-300 block' href='/api/disable-draft'>
